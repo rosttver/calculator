@@ -5,7 +5,6 @@
     <title>!DOCTYPE</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> </head>
-
 <body>
     <div>
         <p>
@@ -15,8 +14,29 @@
     <form action="javascript:calculate();" class="form-inline">
         <p>Ваш возраст:</p>
         <br>
-        <input type="text" name="age" id="age">
-        <p></p>
+        <select class="form-control" name="age" id="age">
+			<option value="0" disabled selected>Выберите ваш возраст</option>
+            <option value="0">До 18 лет</option>
+            <option value="18">18</option>
+			<option value="19">19</option>
+            <option value="20">От 20 до 29</option>
+            <option value="30">30</option>
+			<option value="31">31</option>
+			<option value="32">32</option>
+			<option value="33">33</option>
+			<option value="34">34</option>
+			<option value="35">35</option>
+			<option value="36">36</option>
+			<option value="37">37</option>
+			<option value="38">38</option>
+			<option value="39">39</option>
+            <option value="40">40</option>
+            <option value="41">41</option>
+            <option value="42">42</option>
+            <option value="43">43</option>
+			<option value="44">44</option>
+			<option value="45">45 и более</option>
+		</select>
         <br>
         <br>
         <p>Наивысший уровень образования:</p>
@@ -159,27 +179,158 @@
             <option value="2">Два года</option>
             <option value="3">Три года</option>
             <option value="4">Четыре года</option>
-            <option value="5">Пять лет</option>
+            <option value="5">Пять лет и более</option>
         </select>
         <br>
         <br>
-        <p>Do you have a Certificate of Qualification issued by a Canadian Province or Territory (excluding Quebec and Nunavut)</p>
+		<p>Состоите ли вы в браке\гражданском браке?</p>
+        <input class="btn btn-default spouse" type="button" value="Да">
+        <input class="btn btn-default spouse" type="button" value="Нет">
+        <br>
+        <br>
+		<div class="hidden" id="spouse-block">
+		<p>Наивысший уровень образования вашего партнера:</p>
+		 <select class="form-control" id="spouseEducation">
+            <option value="0" disabled selected>Выберите ваш уровень образования</option>
+            <option value="phd">Докторская степень</option>
+            <option value="master">Магистр</option>
+            <option value="bachelor">Бакалавр</option>
+            <option value="twoOrMore">Два и более удостоверений об образовании, один из которых 3+ академических лет</option>
+            <option value="college">Колледж/Техникум</option>
+            <option value="oneYearDiploma">One-year degree, diploma or certificate from a university, college, trade or technical school, or other institute</option>
+            <option value="school">Средняя школа</option>
+            <option value="0">Образование отсутствует</option>
+        </select>
+        <br>
+        <br>
+		<P>Канадский опыт работы вашего партнера:</P>
+        <select class="form-control" id="spouseExpInside">
+            <option value="0" selected>--отсутствует--</option>
+            <option value="0">Менее года</option>
+            <option value="1">Один год</option>
+            <option value="2">Два года</option>
+            <option value="3">Три года</option>
+            <option value="4">Четыре года</option>
+            <option value="5">Пять лет и более</option>
+        </select>
+        <br>
+        <br>
+		<p>Уровень английского языка вашего партнера:</p>
+        <div class="form-group">
+            <select class="form-control" id="spouseReadingEnglish">
+                <option value="0" disabled selected>--reading--</option>
+                <option value="3">Less than high basic(CLB 3-, IELTS 2.5)</option>
+                <option value="4">High basic(CLB 4, IELTS 3,5)</option>
+                <option value="5">Initial intermediate(CLB 5, IELTS 4)</option>
+                <option value="6">Developing intermediate(CLB 6, IELTS 5.5)</option>
+                <option value="7">Adequate intermediate(CLB 7, IELTS 6)</option>
+                <option value="8">High intermediate(CLB 8, IELTS 6.5)</option>
+                <option value="9">Initial advanced(CLB 9, IELTS 7)</option>
+                <option value="10">Advanced(CLB 10+, IELTS 8+)</option>
+            </select>
+            <select class="form-control" id="spouseWritingEnglish">
+                <option value="0" disabled selected>--writing--</option>
+                <option value="3">Less than high basic(CLB 3-, IELTS 3)</option>
+                <option value="4">High basic(CLB 4, IELTS 4)</option>
+                <option value="5">Initial intermediate(CLB 5, IELTS 5)</option>
+                <option value="6">Developing intermediate(CLB 6, IELTS 5.5)</option>
+                <option value="7">Adequate intermediate(CLB 7, IELTS 6)</option>
+                <option value="8">High intermediate(CLB 8, IELTS 6.5)</option>
+                <option value="9">Initial advanced(CLB 9, IELTS 7)</option>
+                <option value="10">Advanced(CLB 10+, IELTS 7.5+)</option>
+            </select>
+            <select class="form-control" id="spouseListeningEnglish">
+                <option value="0" disabled selected>--listening--</option>
+                <option value="3">Less than high basic(CLB 3-, IELTS 3.5)</option>
+                <option value="4">High basic(CLB 4, IELTS 4,5)</option>
+                <option value="5">Initial intermediate(CLB 5, IELTS 5)</option>
+                <option value="6">Developing intermediate(CLB 6, IELTS 5.5)</option>
+                <option value="7">Adequate intermediate(CLB 7, IELTS 6)</option>
+                <option value="8">High intermediate(CLB 8, IELTS 7.5)</option>
+                <option value="9">Initial advanced(CLB 9, IELTS 8)</option>
+                <option value="10">Advanced(CLB 10+, IELTS 8,5+)</option>
+            </select>
+            <select class="form-control" id="spouseSpeakingEnglish">
+                <option value="0" disabled selected>--speaking--</option>
+                <option value="3">Less than high basic(CLB 3-, IELTS 3)</option>
+                <option value="4">High basic(CLB 4, IELTS 4)</option>
+                <option value="5">Initial intermediate(CLB 5, IELTS 5)</option>
+                <option value="6">Developing intermediate(CLB 6, IELTS 5.5)</option>
+                <option value="7">Adequate intermediate(CLB 7, IELTS 6)</option>
+                <option value="8">High intermediate(CLB 8, IELTS 6.5)</option>
+                <option value="9">Initial advanced(CLB 9, IELTS 7)</option>
+                <option value="10">Advanced(CLB 10+, IELTS 7.5+)</option>
+            </select>
+        </div>
+        <br>
+        <br>
+        <p>Уровень французского языка вашего партнера:</p>
+        <div class="form-group">
+            <select class="form-control" id="spouseReadingFrench">
+                <option value="0" disabled selected>--reading--</option>
+                <option value="3">Less than high basic(CLB 3-, TEF N/A)</option>
+                <option value="4">High basic(CLB 4, TEF 121-150)</option>
+                <option value="5">Initial intermediate(CLB 5, TEF 151-180)</option>
+                <option value="6">Developing intermediate(CLB 6, TEF 181-206)</option>
+                <option value="7">Adequate intermediate(CLB 7, TEF 207-232)</option>
+                <option value="8">High intermediate(CLB 8, TEF 233-247)</option>
+                <option value="9">Initial advanced(CLB 9, TEF 248-262)</option>
+                <option value="10">Advanced(CLB 10+, TEF 263-277+)</option>
+            </select>
+            <select class="form-control" id="spouseWritingFrench">
+                <option value="0" disabled selected>--writing--</option>
+                <option value="3">Less than high basic(CLB 3-, TEF N/A)</option>
+                <option value="4">High basic(CLB 4, TEF 181-225)</option>
+                <option value="5">Initial intermediate(CLB 5, TEF 226-270)</option>
+                <option value="6">Developing intermediate(CLB 6, TEF 271-309)</option>
+                <option value="7">Adequate intermediate(CLB 7, TEF 310-348)</option>
+                <option value="8">High intermediate(CLB 8, TEF 349-370)</option>
+                <option value="9">Initial advanced(CLB 9, TEF 371-392)</option>
+                <option value="10">Advanced(CLB 10+, TEF 393-415+)</option>
+            </select>
+            <select class="form-control" id="spouseListeningFrench">
+                <option value="0" disabled selected>--listening--</option>
+                <option value="3">Less than high basic(CLB 3-, TEF N/A)</option>
+                <option value="4">High basic(CLB 4, TEF 145-180)</option>
+                <option value="5">Initial intermediate(CLB 5, TEF 181-216)</option>
+                <option value="6">Developing intermediate(CLB 6, TEF 217-248)</option>
+                <option value="7">Adequate intermediate(CLB 7, TEF 249-279)</option>
+                <option value="8">High intermediate(CLB 8, TEF 280-297)</option>
+                <option value="9">Initial advanced(CLB 9, TEF 298-315)</option>
+                <option value="10">Advanced(CLB 10+, TEF 316-333+)</option>
+            </select>
+            <select class="form-control" id="spouseSpeakingFrench">
+                <option value="0" disabled selected>--speaking--</option>
+                <option value="3">Less than high basic(CLB 3-, TEF N/A)</option>
+                <option value="4">High basic(CLB 4, TEF 181-225)</option>
+                <option value="5">Initial intermediate(CLB 5, TEF 226-270)</option>
+                <option value="6">Developing intermediate(CLB 6, TEF 271-309)</option>
+                <option value="7">Adequate intermediate(CLB 7, TEF 310-348)</option>
+                <option value="8">High intermediate(CLB 8, TEF 349-370)</option>
+                <option value="9">Initial advanced(CLB 9, TEF 371-392)</option>
+                <option value="10">Advanced(CLB 10+, TEF 393-415+)</option>
+            </select>
+        </div>
+        <br>
+        <br>
+		</div>
+        <p>Есть ли у вас Certificate of Qualification выданный Канадской провинцией или территорией (исключая Quebec и Nunavut)</p>
         <input class="btn btn-default qualifCert" type="button" value="Да">
         <input class="btn btn-default qualifCert" type="button" value="Нет">
         <br>
         <br>
         <p>Заявители могут получить дополнительные баллы при наличии следующего:</p>
-        <p>Do you have a Qualifying Canadian Job Offer (supported by a Labour Market Impact Assessment)?</p>
+        <p>Есть ли у вас Qualifying Canadian Job Offer (поддерживаемый Labour Market Impact Assessment)?</p>
         <input class="btn btn-default LMIA" type="button" value="Да">
         <input class="btn btn-default LMIA" type="button" value="Нет">
         <br>
         <br>
-        <p>Have you applied for and received a Nomination Certificate from a Canadian Province or Territory? (excluding Quebec and Nunavut)</p>
+        <p>Подались ли вы и получили Nomination Certificate выданный Канадской провинцией или территорией (исключая Quebec и Nunavut)</p>
         <input class="btn btn-default provincialNomenee" type="button" value="Да">
         <input class="btn btn-default provincialNomenee" type="button" value="Нет">
         <br>
         <br>
-        <input type="submit" value="Посчитать">
+        <input class="btn btn-default" type="submit" value="Посчитать">
         </div>
     </form>
 </body>
