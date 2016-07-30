@@ -25,7 +25,7 @@ var languagePoints;
 var expPoints;
 var certificatePoints;
 var transferabilityPoints;
-var spousePoints;
+var spousePoints = 0;
 
 
 /* $("#age").keyup(function() {
@@ -764,126 +764,128 @@ function calculateLanguage() {
 }
 
 function calculateSpousePoints() {
-    var englishOverall = (person.spouse.spouseReadingEnglish + person.spouse.spouseWritingEnglish + person.spouse.spouseListeningEnglish + person.spouse.spouseSpeakingEnglish) / 4;
-    var frenchOverall = (person.spouse.spouseReadingFrench + person.spouse.spouseWritingFrench + person.spouse.spouseListeningFrench + person.spouse.spouseSpeakingFrench) / 4;
-    var mainLanguage = 0;
-    var spouseEducationPoints = 0;
-    if (englishOverall >= frenchOverall) {
-        if (person.spouse.spouseReadingEnglish === 5 || person.spouse.spouseReadingEnglish === 6) {
-            mainLanguage += 1;
-        } else if (person.spouse.spouseReadingEnglish === 7 || person.spouse.spouseReadingEnglish === 8) {
-            mainLanguage += 3;
-        } else if (person.spouse.spouseReadingEnglish >= 9) {
-            mainLanguage += 5;
-            console.log("reading");
+    if (person.spouse) {
+        var englishOverall = (person.spouse.spouseReadingEnglish + person.spouse.spouseWritingEnglish + person.spouse.spouseListeningEnglish + person.spouse.spouseSpeakingEnglish) / 4;
+        var frenchOverall = (person.spouse.spouseReadingFrench + person.spouse.spouseWritingFrench + person.spouse.spouseListeningFrench + person.spouse.spouseSpeakingFrench) / 4;
+        var mainLanguage = 0;
+        var spouseEducationPoints = 0;
+        if (englishOverall >= frenchOverall) {
+            if (person.spouse.spouseReadingEnglish === 5 || person.spouse.spouseReadingEnglish === 6) {
+                mainLanguage += 1;
+            } else if (person.spouse.spouseReadingEnglish === 7 || person.spouse.spouseReadingEnglish === 8) {
+                mainLanguage += 3;
+            } else if (person.spouse.spouseReadingEnglish >= 9) {
+                mainLanguage += 5;
+                console.log("reading");
+            } else {
+                mainLanguage += 0;
+            }
+            if (person.spouse.spouseWritingEnglish === 5 || person.spouse.spouseWritingEnglish === 6) {
+                mainLanguage += 1;
+            } else if (person.spouse.spouseWritingEnglish === 7 || person.spouse.spouseWritingEnglish === 8) {
+                mainLanguage += 3;
+            } else if (person.spouse.spouseWritingEnglish >= 9) {
+                mainLanguage += 5;
+                console.log("writing");
+            } else {
+                mainLanguage += 0;
+            }
+            if (person.spouse.spouseListeningEnglish === 5 || person.spouse.spouseListeningEnglish === 6) {
+                mainLanguage += 1;
+            } else if (person.spouse.spouseListeningEnglish === 7 || person.spouse.spouseListeningEnglish === 8) {
+                mainLanguage += 3;
+            } else if (person.spouse.spouseListeningEnglish >= 9) {
+                mainLanguage += 5;
+                console.log("listening");
+            } else {
+                mainLanguage += 0;
+            }
+            if (person.spouse.spouseSpeakingEnglish === 5 || person.spouse.spouseSpeakingEnglish === 6) {
+                mainLanguage += 1;
+            } else if (person.spouse.spouseSpeakingEnglish === 7 || person.spouse.spouseSpeakingEnglish === 8) {
+                mainLanguage += 3;
+            } else if (person.spouse.spouseSpeakingEnglish >= 9) {
+                mainLanguage += 5;
+                console.log("speaking");
+            } else {
+                mainLanguage += 0;
+            }
         } else {
-            mainLanguage += 0;
+            if (person.spouse.spouseReadingFrench === 5 || person.spouse.spouseReadingFrench === 6) {
+                mainLanguage += 1;
+            } else if (person.spouse.spouseReadingFrench === 7 || person.spouse.spouseReadingFrench === 8) {
+                mainLanguage += 3;
+            } else if (person.spouse.spouseReadingFrench >= 9) {
+                mainLanguage += 5;
+            } else {
+                mainLanguage += 0;
+            }
+            if (person.spouse.spouseWritingFrench === 5 || person.spouse.spouseWritingFrench === 6) {
+                mainLanguage += 1;
+            } else if (person.spouse.spouseWritingFrench === 7 || person.spouse.spouseWritingFrench === 8) {
+                mainLanguage += 3;
+            } else if (person.spouse.spouseWritingFrench >= 9) {
+                mainLanguage += 5;
+            } else {
+                mainLanguage += 0;
+            }
+            if (person.spouse.spouseListeningFrench === 5 || person.spouse.spouseListeningFrench === 6) {
+                mainLanguage += 1;
+            } else if (person.spouse.spouseListeningFrench === 7 || person.spouse.spouseListeningFrench === 8) {
+                mainLanguage += 3;
+            } else if (person.spouse.spouseListeningFrench >= 9) {
+                mainLanguage += 5;
+            } else {
+                mainLanguage += 0;
+            }
+            if (person.spouse.spouseSpeakingFrench === 5 || person.spouse.spouseSpeakingFrench === 6) {
+                mainLanguage += 1;
+            } else if (person.spouse.spouseSpeakingFrench === 7 || person.spouse.spouseSpeakingFrench === 8) {
+                mainLanguage += 3;
+            } else if (person.spouse.spouseSpeakingFrench >= 9) {
+                mainLanguage += 5;
+            } else {
+                mainLanguage += 0;
+            }
         }
-        if (person.spouse.spouseWritingEnglish === 5 || person.spouse.spouseWritingEnglish === 6) {
-            mainLanguage += 1;
-        } else if (person.spouse.spouseWritingEnglish === 7 || person.spouse.spouseWritingEnglish === 8) {
-            mainLanguage += 3;
-        } else if (person.spouse.spouseWritingEnglish >= 9) {
-            mainLanguage += 5;
-            console.log("writing");
-        } else {
-            mainLanguage += 0;
-        }
-        if (person.spouse.spouseListeningEnglish === 5 || person.spouse.spouseListeningEnglish === 6) {
-            mainLanguage += 1;
-        } else if (person.spouse.spouseListeningEnglish === 7 || person.spouse.spouseListeningEnglish === 8) {
-            mainLanguage += 3;
-        } else if (person.spouse.spouseListeningEnglish >= 9) {
-            mainLanguage += 5;
-            console.log("listening");
-        } else {
-            mainLanguage += 0;
-        }
-        if (person.spouse.spouseSpeakingEnglish === 5 || person.spouse.spouseSpeakingEnglish === 6) {
-            mainLanguage += 1;
-        } else if (person.spouse.spouseSpeakingEnglish === 7 || person.spouse.spouseSpeakingEnglish === 8) {
-            mainLanguage += 3;
-        } else if (person.spouse.spouseSpeakingEnglish >= 9) {
-            mainLanguage += 5;
-            console.log("speaking");
-        } else {
-            mainLanguage += 0;
-        }
-    } else {
-        if (person.spouse.spouseReadingFrench === 5 || person.spouse.spouseReadingFrench === 6) {
-            mainLanguage += 1;
-        } else if (person.spouse.spouseReadingFrench === 7 || person.spouse.spouseReadingFrench === 8) {
-            mainLanguage += 3;
-        } else if (person.spouse.spouseReadingFrench >= 9) {
-            mainLanguage += 5;
-        } else {
-            mainLanguage += 0;
-        }
-        if (person.spouse.spouseWritingFrench === 5 || person.spouse.spouseWritingFrench === 6) {
-            mainLanguage += 1;
-        } else if (person.spouse.spouseWritingFrench === 7 || person.spouse.spouseWritingFrench === 8) {
-            mainLanguage += 3;
-        } else if (person.spouse.spouseWritingFrench >= 9) {
-            mainLanguage += 5;
-        } else {
-            mainLanguage += 0;
-        }
-        if (person.spouse.spouseListeningFrench === 5 || person.spouse.spouseListeningFrench === 6) {
-            mainLanguage += 1;
-        } else if (person.spouse.spouseListeningFrench === 7 || person.spouse.spouseListeningFrench === 8) {
-            mainLanguage += 3;
-        } else if (person.spouse.spouseListeningFrench >= 9) {
-            mainLanguage += 5;
-        } else {
-            mainLanguage += 0;
-        }
-        if (person.spouse.spouseSpeakingFrench === 5 || person.spouse.spouseSpeakingFrench === 6) {
-            mainLanguage += 1;
-        } else if (person.spouse.spouseSpeakingFrench === 7 || person.spouse.spouseSpeakingFrench === 8) {
-            mainLanguage += 3;
-        } else if (person.spouse.spouseSpeakingFrench >= 9) {
-            mainLanguage += 5;
-        } else {
-            mainLanguage += 0;
-        }
-    }
-    console.log("Spouse language bonus " + mainLanguage);
-    if (person.spouse.spouseEducation)
-        if (person.spouse.spouseEducation == "phd") {
+        console.log("Spouse language bonus " + mainLanguage);
+        if (person.spouse.spouseEducation)
+            if (person.spouse.spouseEducation == "phd") {
+                spouseEducationPoints = 10;
+            } else if (person.spouse.spouseEducation == "master") {
             spouseEducationPoints = 10;
-        } else if (person.spouse.spouseEducation == "master") {
-        spouseEducationPoints = 10;
-    } else if (person.spouse.spouseEducation == "bachelor") {
-        spouseEducationPoints = 8;
-    } else if (person.spouse.spouseEducation == "twoOrMore") {
-        spouseEducationPoints = 9;
-    } else if (person.spouse.spouseEducation == "college") {
-        spouseEducationPoints = 7;
-    } else if (person.spouse.spouseEducation == "oneYearDiploma") {
-        spouseEducationPoints = 6;
-    } else if (person.spouse.spouseEducation == "school") {
-        spouseEducationPoints = 2;
-    } else {
-        spouseEducationPoints = 0;
-    }
-    console.log("Spouse education bonus " + spouseEducationPoints);
-    if (person.spouse.spouseExperienceIn == 1) {
-        expInside = 5;
-    } else if (person.spouse.spouseExperienceIn == 2) {
-        expInside = 7;
-    } else if (person.spouse.spouseExperienceIn == 3) {
-        expInside = 8;
-    } else if (person.spouse.spouseExperienceIn == 4) {
-        expInside = 9;
-    } else if (person.spouse.spouseExperienceIn == 5) {
-        expInside = 10;
-    } else {
-        expInside = 0;
-    }
-    console.log("Spouse experience bonus " + expInside);
+        } else if (person.spouse.spouseEducation == "bachelor") {
+            spouseEducationPoints = 8;
+        } else if (person.spouse.spouseEducation == "twoOrMore") {
+            spouseEducationPoints = 9;
+        } else if (person.spouse.spouseEducation == "college") {
+            spouseEducationPoints = 7;
+        } else if (person.spouse.spouseEducation == "oneYearDiploma") {
+            spouseEducationPoints = 6;
+        } else if (person.spouse.spouseEducation == "school") {
+            spouseEducationPoints = 2;
+        } else {
+            spouseEducationPoints = 0;
+        }
+        console.log("Spouse education bonus " + spouseEducationPoints);
+        if (person.spouse.spouseExperienceIn == 1) {
+            expInside = 5;
+        } else if (person.spouse.spouseExperienceIn == 2) {
+            expInside = 7;
+        } else if (person.spouse.spouseExperienceIn == 3) {
+            expInside = 8;
+        } else if (person.spouse.spouseExperienceIn == 4) {
+            expInside = 9;
+        } else if (person.spouse.spouseExperienceIn == 5) {
+            expInside = 10;
+        } else {
+            expInside = 0;
+        }
+        console.log("Spouse experience bonus " + expInside);
 
 
-    spousePoints = mainLanguage + spouseEducationPoints + expInside;
+        spousePoints = mainLanguage + spouseEducationPoints + expInside;
+    }
 }
 
 function calculareTransferability() {
