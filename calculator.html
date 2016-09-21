@@ -8,18 +8,18 @@
 <body>
     <div>
         <p>
-            Простой и удобный калькулятор, который поможет оценить ваши шансы на получение вида на жительство(Permanent Resident) в Канаде по программе Express Entry. Все данные были взяты с официального портала правительства Канады, для получения наиболее достоверного результата.
+            Simple and convinient calculator, whcich can help you to points according to Express Entry program(new Canadian immigration program). All data was imported from the Canadian Immigration official web portal.
         </p>
     </div>
     <form action="javascript:calculate();" class="form-inline">
-        <p>Ваш возраст:</p>
+        <p>Your age:</p>
         <br>
         <select class="form-control" name="age" id="age">
 			<option value="0" disabled selected>Выберите ваш возраст</option>
-            <option value="0">До 18 лет</option>
+            <option value="0">18 and under</option>
             <option value="18">18</option>
 			<option value="19">19</option>
-            <option value="20">От 20 до 29</option>
+            <option value="20">20 to 29</option>
             <option value="30">30</option>
 			<option value="31">31</option>
 			<option value="32">32</option>
@@ -35,28 +35,28 @@
             <option value="42">42</option>
             <option value="43">43</option>
 			<option value="44">44</option>
-			<option value="45">45 и более</option>
+			<option value="45">45 and more</option>
 		</select>
         <br>
         <br>
-        <p>Наивысший уровень образования:</p>
+        <p>Your hightest level of education:</p>
         <br>
         <select class="form-control" name="education" id="education">
-            <option value="0" disabled selected>Выберите ваш уровень образования</option>
-            <option value="phd">Докторская степень</option>
-            <option value="master">Магистр</option>
-            <option value="bachelor">Бакалавр</option>
-            <option value="twoOrMore">Два и более удостоверений об образовании, один из которых 3+ академических лет</option>
-            <option value="college">Колледж/Техникум</option>
+            <option value="0" disabled selected>Please choose your level of education</option>
+            <option value="phd">PHD</option>
+            <option value="master">Masters degree</option>
+            <option value="bachelor">Bachelor degree</option>
+            <option value="twoOrMore">Two or more certificates, diplomas, or degrees. One must be for a program of three or more years</option>
+            <option value="college">Two-year program at a university, college, trade or technical in school, or other institute</option>
             <option value="oneYearDiploma">One-year degree, diploma or certificate from a university, college, trade or technical school, or other institute</option>
-            <option value="school">Средняя школа</option>
-            <option value="0">Образование отсутствует</option>
+            <option value="school">Secondary school (high school graduation)</option>
+            <option value="0">Less than secondary school (high school)</option>
         </select>
         <br>
         <br>
-        <p>В дополнение к образованию выбранному выше, есть ли у вас второй диплом/сертификат колледжа?</p>
-        <input class="btn btn-default extraDiploma" type="button" value="Да">
-        <input class="btn btn-default extraDiploma" type="button" value="Нет">
+        <p>According to the main education do you have additional diplomas/college cerificats?</p>
+        <input class="btn btn-default extraDiploma" type="button" value="Yes">
+        <input class="btn btn-default extraDiploma" type="button" value="No">
         <br>
         <br>
         <!-- <p>Есть ли у вас диплом канадского вуза/средней школы с длительностью программы от двух академических лет?</p>
@@ -64,7 +64,7 @@
         <input class="btn btn-default canadianDiploma" type="button" value="Нет">
         <br>
         <br> -->
-        <p>Уровень английского языка:</p>
+        <p>English proficiency level:</p>
         <div class="form-group">
             <select class="form-control" name="readingEnglish" id="readingEnglish">
                 <option value="0" disabled selected>--reading--</option>
@@ -113,7 +113,7 @@
         </div>
         <br>
         <br>
-        <p>Уровень французского языка:</p>
+        <p>French proficiency level:</p>
         <div class="form-group">
             <select class="form-control" name="readingFrench" id="readingFrench">
                 <option value="0" disabled selected>--reading--</option>
@@ -162,60 +162,60 @@
         </div>
         <br>
         <br>
-        <P>Опыт работы за пределами Канады:</P>
+        <P>Working experience outside of Canada:</P>
         <select class="form-control" name="expOutsie" id="expOutside">
-            <option value="0" selected>--отсутствует--</option>
-            <option value="0">Менее года</option>
-            <option value="1">От года до двух лет</option>
-            <option value="3">Три года и более</option>
+            <option value="0" selected>--none--</option>
+            <option value="0">Less than one year</option>
+            <option value="1">1 to 3 yeats</option>
+            <option value="3">3+</option>
         </select>
         <br>
         <br>
-        <P>Канадский опыт работы:</P>
+        <P>Working experience inside Canada:</P>
         <select class="form-control" name="expInside" id="expInside">
-            <option value="0" selected>--отсутствует--</option>
-            <option value="0">Менее года</option>
-            <option value="1">Один год</option>
-            <option value="2">Два года</option>
-            <option value="3">Три года</option>
-            <option value="4">Четыре года</option>
-            <option value="5">Пять лет и более</option>
+            <option value="0" selected>--none--</option>
+            <option value="0">Less that one year</option>
+            <option value="1">One year</option>
+            <option value="2">Two years</option>
+            <option value="3">Three years</option>
+            <option value="4">Four years</option>
+            <option value="5">Five years and more</option>
         </select>
         <br>
         <br>
-		<p>Состоите ли вы в браке\гражданском браке?</p>
-        <input class="btn btn-default spouse" type="button" value="Да">
-        <input class="btn btn-default spouse" type="button" value="Нет">
+		<p>Do you have Spouse or common-law partner?</p>
+        <input class="btn btn-default spouse" type="button" value="Yes">
+        <input class="btn btn-default spouse" type="button" value="No">
         <br>
         <br>
 		<div class="hidden" id="spouse-block">
-		<p>Наивысший уровень образования вашего партнера:</p>
+		<p>Highest level of education of your Spouse or common-law partner:</p>
 		 <select class="form-control" id="spouseEducation">
-            <option value="0" disabled selected>Выберите ваш уровень образования</option>
-            <option value="phd">Докторская степень</option>
-            <option value="master">Магистр</option>
-            <option value="bachelor">Бакалавр</option>
-            <option value="twoOrMore">Два и более удостоверений об образовании, один из которых 3+ академических лет</option>
-            <option value="college">Колледж/Техникум</option>
+            <option value="0" disabled selected>Please choose your level of education</option>
+            <option value="phd">PHD</option>
+            <option value="master">Master's degree</option>
+            <option value="bachelor">Bachelor's degree</option>
+            <option value="twoOrMore">Two or more certificates, diplomas, or degrees. One must be for a program of three or more years</option>
+            <option value="college">Two-year program at a university, college, trade or technical in school, or other institute</option>
             <option value="oneYearDiploma">One-year degree, diploma or certificate from a university, college, trade or technical school, or other institute</option>
-            <option value="school">Средняя школа</option>
-            <option value="0">Образование отсутствует</option>
+            <option value="school">Secondary school (high school graduation)</option>
+            <option value="0">Less than secondary school (high school)</option>
         </select>
         <br>
         <br>
-		<P>Канадский опыт работы вашего партнера:</P>
+		<P>Your Spouse or common-law partner work experience inside Canada:</P>
         <select class="form-control" id="spouseExpInside">
-            <option value="0" selected>--отсутствует--</option>
-            <option value="0">Менее года</option>
-            <option value="1">Один год</option>
-            <option value="2">Два года</option>
-            <option value="3">Три года</option>
-            <option value="4">Четыре года</option>
-            <option value="5">Пять лет и более</option>
+            <option value="0" selected>--none--</option>
+            <option value="0">Less than one year</option>
+            <option value="1">One year</option>
+            <option value="2">Two years</option>
+            <option value="3">Three years</option>
+            <option value="4">Four years</option>
+            <option value="5">Five years and more</option>
         </select>
         <br>
         <br>
-		<p>Уровень английского языка вашего партнера:</p>
+		<p>Your Spouse or common-law partner English proficiency level:</p>
         <div class="form-group">
             <select class="form-control" id="spouseReadingEnglish">
                 <option value="0" disabled selected>--reading--</option>
@@ -264,7 +264,7 @@
         </div>
         <br>
         <br>
-        <p>Уровень французского языка вашего партнера:</p>
+        <p>Your Spouse or common-law partner French proficiency level:</p>
         <div class="form-group">
             <select class="form-control" id="spouseReadingFrench">
                 <option value="0" disabled selected>--reading--</option>
@@ -314,23 +314,23 @@
         <br>
         <br>
 		</div>
-        <p>Есть ли у вас Certificate of Qualification выданный Канадской провинцией или территорией (исключая Quebec и Nunavut)</p>
-        <input class="btn btn-default qualifCert" type="button" value="Да">
-        <input class="btn btn-default qualifCert" type="button" value="Нет">
+        <p>Do you have Certificate of Qualification?</p>
+        <input class="btn btn-default qualifCert" type="button" value="Yes">
+        <input class="btn btn-default qualifCert" type="button" value="No">
         <br>
         <br>
-        <p>Заявители могут получить дополнительные баллы при наличии следующего:</p>
-        <p>Есть ли у вас Qualifying Canadian Job Offer (поддерживаемый Labour Market Impact Assessment)?</p>
-        <input class="btn btn-default LMIA" type="button" value="Да">
-        <input class="btn btn-default LMIA" type="button" value="Нет">
+        <p>You can gain extra points if you have:</p>
+        <p>Do you have Qualifying Canadian Job Offer?</p>
+        <input class="btn btn-default LMIA" type="button" value="Yes">
+        <input class="btn btn-default LMIA" type="button" value="No">
         <br>
         <br>
-        <p>Подались ли вы и получили Nomination Certificate выданный Канадской провинцией или территорией (исключая Quebec и Nunavut)</p>
-        <input class="btn btn-default provincialNomenee" type="button" value="Да">
-        <input class="btn btn-default provincialNomenee" type="button" value="Нет">
+        <p>Do you have Provincial or territorial nomination?</p>
+        <input class="btn btn-default provincialNomenee" type="button" value="Yes">
+        <input class="btn btn-default provincialNomenee" type="button" value="No">
         <br>
         <br>
-        <input class="btn btn-default" type="submit" value="Посчитать">
+        <input class="btn btn-default" type="submit" value="Calculate">
         </div>
     </form>
 </body>
