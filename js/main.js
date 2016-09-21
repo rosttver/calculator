@@ -44,7 +44,7 @@ $("#education").change(function() {
 $('.extraDiploma').on('click', function() {
     $('.extraDiploma').removeClass('active');
     $(this).addClass('active');
-    if ($(this).attr("value") === 'Да') {
+    if ($(this).attr("value") === 'Yes') {
         person.extraEducation = true;
     } else {
         person.extraEducation = false;
@@ -113,11 +113,11 @@ $("#expInside").change(function() {
     console.log(person.experienceIn);
 });
 
-//снимаем параметры по жене
+//Spouse parameters
 $('.spouse').on('click', function() {
     $('.spouse').removeClass('active');
     $(this).addClass('active');
-    if ($(this).attr("value") === 'Да') {
+    if ($(this).attr("value") === 'Yes') {
         person.spouse = {
             spouseEducation: "",
             spouseExperienceIn: "",
@@ -148,7 +148,7 @@ $("#spouseExpInside").change(function() {
     console.log("Spouse experience selected: " + person.spouse.spouseExperienceIn);
 });
 
-//языки жены
+//Spouse language lvl
 $("#spouseReadingEnglish").change(function() {
     person.spouse.spouseReadingEnglish = parseInt($("#spouseReadingEnglish").val());
     console.log(person.spouse.spouseReadingEnglish);
@@ -192,7 +192,7 @@ $("#spouseSpeakingFrench").change(function() {
 $('.qualifCert').on('click', function() {
     $('.qualifCert').removeClass('active');
     $(this).addClass('active');
-    if ($(this).attr("value") === 'Да') {
+    if ($(this).attr("value") === 'Yes') {
         person.certificateOfQualification = true;
     } else {
         person.certificateOfQualification = false;
@@ -203,7 +203,7 @@ $('.qualifCert').on('click', function() {
 $('.LMIA').on('click', function() {
     $('.LMIA').removeClass('active');
     $(this).addClass('active');
-    if ($(this).attr("value") === 'Да') {
+    if ($(this).attr("value") === 'Yes') {
         person.LMIA = true;
     } else {
         person.LMIA = false;
@@ -214,7 +214,7 @@ $('.LMIA').on('click', function() {
 $('.provincialNomenee').on('click', function() {
     $('.provincialNomenee').removeClass('active');
     $(this).addClass('active');
-    if ($(this).attr("value") === 'Да') {
+    if ($(this).attr("value") === 'Yes') {
         person.provincialNomenee = true;
     } else {
         person.provincialNomenee = false;
